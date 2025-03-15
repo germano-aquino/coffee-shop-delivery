@@ -33,7 +33,7 @@ export function Product({ coffeeLabel: preparationMethod, name, description, pri
       <img src={coffeeImg[name]} alt=""/>
       <CoffeeLabelContainer>
         {preparationMethod.map(method => {
-          return <p>{method}</p> 
+          return <p key={method}>{method}</p> 
         })}
       </CoffeeLabelContainer>
       <Name>{ name }</Name>

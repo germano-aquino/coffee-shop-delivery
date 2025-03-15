@@ -45,4 +45,8 @@ export const ConfirmOrderButton = styled.button`
     cursor: pointer;
     background: ${props => props.theme['yellow-700']};
   }
+  &:disabled {
+    cursor: not-allowed;
+    background: ${props => props.theme['yellow-500']};
+  }
 `

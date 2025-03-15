@@ -4,7 +4,7 @@ import { OrderContainer, PriceContainer, ConfirmOrderButton } from "./styles";
 import { OrderContext } from "../../../../contexts/OrderContext";
 
 export function OrderInformation() {
-  const { totalCoffeeCost } = useContext(OrderContext)
+  const { totalCoffeeCost, itemsCartQuantity } = useContext(OrderContext)
 
   const deliveryFee = 3.5
   const totalCost = deliveryFee + totalCoffeeCost
@@ -18,7 +18,8 @@ export function OrderInformation() {
         <p>Total <span>R$ {totalCost.toFixed(2)}</span></p>
       </PriceContainer>
       <ConfirmOrderButton 
-        form="checkoutForm" 
+        form="checkoutForm"
+        disabled={!itemsCartQuantity}
         type="submit"
       >
         CONFIRMAR PEDIDO
